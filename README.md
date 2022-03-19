@@ -1,2 +1,2 @@
-# KotlinCalculator-master
+# Calculator
  MyCalculator
