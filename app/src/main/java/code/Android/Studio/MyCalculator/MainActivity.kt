@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity()
             if(view.text == ".")
             {
                 if(canAddNumber)
-                    workingsTV.append(view.text)   // them ki tu tu bat ki nut nao
+                    workingsTV.append(view.text)   // them ki tu thap phan vao tv
                 canAddNumber = false               // de bien nay ve false the hien rang khong the them ki tu laf so nua
             }
             else
@@ -59,19 +59,19 @@ class MainActivity : AppCompatActivity()
      private fun digitsOperators(): MutableList<Any>    // ham chuyen cac ki tu so va toan hoc vào mảng list
     {
         val list = mutableListOf<Any>()    // tao bien danh sach 
-        var currentDigit = ""            // chuoi so hien tai
-        for(character in workingsTV.text)  // ki tu o trong chuoi workingsTV
+        var currentDigit = ""            // chuoi hien tai
+        for(character in workingsTV.text)  
         {
             if(character.isDigit() || character == '.') // neu ki tu la chuoi so hoac la ki tu thap phan
                 currentDigit += character               // them ki tu hien tai vao chuoi currentDigit  
-            else                                        // neu khong phai 
+            else                                        
             {
                 list.add(currentDigit.toFloat())       // them chuoi currentDigit chuyen sang kieu float vao list
                 currentDigit = ""                      // chuyen bien current ve null
                 list.add(character)                    // them ki tu toan hoc vao list
             }
         }
-        if(currentDigit != "")                         // de them nhung ki tu con lai vao list
+        if(currentDigit != "")                        // neu string current khac rong thi them vao list        
             list.add(currentDigit.toFloat())
         return list
     }
